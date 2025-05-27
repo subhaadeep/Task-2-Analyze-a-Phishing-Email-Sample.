@@ -1,0 +1,183 @@
+Delivered-To: subhodeepchowdhury06210@gmail.com
+Received: by 2002:a05:6400:85:b0:266:5667:def8 with SMTP id hq5csp3546219ecb;
+        Mon, 19 Aug 2024 09:09:39 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGK1mzXCUOuk0pbtmz4YVW2FbFKiIpIFBbDyjEKT8NeiqyjMqmVLm9zq140GW8ek3YFkv4t
+X-Received: by 2002:ac2:4c48:0:b0:52e:fc7b:39cb with SMTP id 2adb3069b0e04-5332df48187mr5640494e87.26.1724083778773;
+        Mon, 19 Aug 2024 09:09:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1724083778; cv=none;
+        d=google.com; s=arc-20160816;
+        b=TiPjodRpfBeqhNJuJsfzrXNqjyMNbOoV16w+leBZr2JlgtVP93iTDnBs5g9AVdaLSx
+         nka918NXQACjkRhVL7QTegTiPBxd2DlLmgm1Ag7eZklqP0EmU/yDlRmr3xpscTx/13PC
+         5geRvIaaa19AuTuJz7Ig2/u2+n4fOLiAjflYC437SJBkjhtYbuTugfSntBMYxKfH5skK
+         U7KsmVQns+SwJFYaSaLwQnM3yAMCfX55kM4iNGTz1R5dBuO5xPx+QLJIJJhV0Tgvf7ug
+         gCVQQ2HcwVvs6TsXJdKH99Uq0xOLBOyILDKP9LDtVArKmuOh1n6Gru52i4fIPkvwHa1P
+         Rlcw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:date:mime-version:message-id:subject:to
+         :from:dkim-signature;
+        bh=JXGQGLXb6t5MK0p5SBA6WGwvSbKJKpfwAHDYVfxyRkI=;
+        fh=rjEkitUQqJ73Kt1i1bfkEy1tsp/9QtDjQ1BG9DoWOZs=;
+        b=TCEZQ7nteZHhvqQrlq5i5okFr7tJSpJU1kDPryXdciTYhPAsDOAfP8gHX4fD8AxwId
+         1ZryLkCsublzXGZ6NBMv2/Qpx8wrhwrFwfDzGCNCpxeM2HQlRarRGYbyIU9WSdS4JHQa
+         /lcU4O8XMYQw871t25hwWwB97NoqC6/HhwBphqpFp6c7ZNNgRrQfaVCLyQPbNO8+us1M
+         yHcK8VTkp2hhJXhmYX/CDsYwkgUP1N+u1YAt6U6iFvlShFsuvCYSLbV+yK1T0y59lOeA
+         J5bH5uJWUKB8BwgUk1PQ+8vdeO8pGGQeSeLEp909ts81GJNEdrjIG3wfeSTcrPIGpCXX
+         nmfg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@z-lib.ai header.s=default header.b=JQQN9Spu;
+       spf=pass (google.com: domain of noreply@z-lib.ai designates 185.254.199.12 as permitted sender) smtp.mailfrom=noreply@z-lib.ai;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=z-lib.ai
+Return-Path: <noreply@z-lib.ai>
+Received: from z-lib.dev (z-lib.dev. [185.254.199.12])
+        by mx.google.com with ESMTPS id a640c23a62f3a-a838398db78si606460166b.966.2024.08.19.09.09.38
+        for <subhodeepchowdhury06210@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 19 Aug 2024 09:09:38 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@z-lib.ai designates 185.254.199.12 as permitted sender) client-ip=185.254.199.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@z-lib.ai header.s=default header.b=JQQN9Spu;
+       spf=pass (google.com: domain of noreply@z-lib.ai designates 185.254.199.12 as permitted sender) smtp.mailfrom=noreply@z-lib.ai;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=z-lib.ai
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=z-lib.ai;
+	s=default; h=Content-Transfer-Encoding:Content-Type:Date:MIME-Version:
+	Message-ID:Subject:To:From:Sender:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=JXGQGLXb6t5MK0p5SBA6WGwvSbKJKpfwAHDYVfxyRkI=; b=JQQN9SpuGRb5oYRR0f2U9AYvdG
+	V2SUF9N2Mmcnh7vUNGKsOnl3Pev3T68x4hXv0EMhxfBm9R+6xu+UIjBTeQpR9nYhNKvtCCKjhATY/
+	ueQ4GUTh7GlTx3VPF1F36OTmrY/RhjH4UkebrJZRpQ8Lh3j/l8hNZXRQOmOE0BTb0zbcNGh5JiZk+
+	rCr6xaQy1NSneA1hWuQO2KlByJqIGBInteoiWEv5yBFk1qHdc9I70GqihBRY2tcZTiqXxiUo8IGFm
+	5HqhSOnNFx/Jk/aLzIq/NBF9P99lsZme/oSVls2D1ibhg6Em4g1Xv3KnMukc64C0tiiHacrON3lBY
+	JqvVCXBQ==;
+Received: from [203.161.54.139] (port=56370 helo=[127.0.0.1])
+	by 185-254-199-12.cprapid.com with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96.2)
+	(envelope-from <noreply@z-lib.ai>)
+	id 1sg4wt-0000Jo-0p
+	for subhodeepchowdhury06210@gmail.com;
+	Mon, 19 Aug 2024 16:09:38 +0000
+From: Z-Library <noreply@z-lib.ai>
+To: subhodeepchowdhury06210@gmail.com
+Subject: Urgent: Secure Your Final Access to Z-Library Now
+Message-ID: <3e49a6b8f667e5c60488269b130aaa87@z-lib.ai>
+MIME-Version: 1.0
+Date: Mon, 19 Aug 2024 16:09:38 +0000
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - 185-254-199-12.cprapid.com
+X-AntiAbuse: Original Domain - gmail.com
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - z-lib.ai
+X-Get-Message-Sender-Via: 185-254-199-12.cprapid.com: authenticated_id: noreply@z-lib.ai
+X-Authenticated-Sender: 185-254-199-12.cprapid.com: noreply@z-lib.ai
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8"=
+>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1.0">
+    <title>Immediate Action Required: Last Chance to Secure Y=
+our Access!</title>
+</head>
+<body>
+    <p>Dear Subhodeep,</p>
+    <=
+p>We hope this message finds you well. This is a crucial update about your =
+Z-Library access that requires your IMMEDIATE attention.</p>
+php
+Kodu k=
+opyala
+<h2>=E2=9A=A0=EF=B8=8F Exclusive Opportunity: Don=E2=80=99t Miss O=
+ut! =E2=9A=A0=EF=B8=8F</h2>
+<p>As a valued member, you have been exclusiv=
+ely selected to be among the few who can secure uninterrupted access to Z-L=
+ibrary before it=E2=80=99s too late! <strong>But time is running out</stron=
+g>, and we want to ensure you don=E2=80=99t lose the immense benefits you c=
+urrently enjoy.</p>
+
+<p>In a few days, Z-Library will transition to an =
+invitation-only model. This means that <strong>only those who upgrade to ou=
+r Premium Membership</strong> will continue to have access. If you don=
+=E2=80=99t act NOW, your access will be permanently disabled, and this offe=
+r will be gone forever.</p>
+
+<h2>=F0=9F=8E=AF Act Now: Limited Spots Av=
+ailable</h2>
+<p>We can only extend this exclusive offer to a limited numb=
+er of members. Currently, there are <strong>ONLY 50 spots left</strong>, an=
+d they are filling up fast. <strong>Over 10,000 members have already upgrad=
+ed</strong>, and we expect the remaining spots to be gone within hours!</p>=
+
+
+<h2>=F0=9F=9A=80 How to Secure Your Premium Membership:</h2>
+<ol>=
+
+    <li><strong>Purchase an Azteco Voucher:</strong> <br> Choose from on=
+e of our trusted vendors below and complete your purchase as soon as possib=
+le:
+        <ul>
+            <li><a href=3D"https://www.eneba.com/store=
+/all?text=3Dazteco%20lightning" target=3D"_blank">Eneba</a>: Safe and quick=
+, with various payment methods available.</li>
+            <li><a href=3D=
+"https://www.g2a.com/search?query=3DAzteco%20Lightning" target=3D"_blank">G=
+2A.com</a>: Fast, secure, and accepts multiple payment options.</li>
+    =
+        <li><a href=3D"https://www.kinguin.net/c/146174/azteco?active=3D1&h=
+ideUnavailable=3D0&phrase=3DAzteco%20Lightning&size=3D50&sort=3Dbestseller.=
+total,DESC" target=3D"_blank">Kinguin</a>: Multiple payment gateways suppor=
+ted.</li>
+            <li><a href=3D"https://driffle.com/store?q=3Dlightn=
+ing%20bitcoin%20azteco" target=3D"_blank">Driffle</a>: Secure site offering=
+ credit card payment options.</li>
+        </ul>
+    </li>
+    <li><s=
+trong>Submit Your Voucher:</strong><br> After purchasing, simply enter your=
+ voucher code here: <a href=3D"https://z-lib.id/paymenten" target=3D"_blank=
+">Submit Z-Library Payment</a></li>
+</ol>
+
+<p>=F0=9F=92=A5 <strong>Do=
+n't miss out on this final chance!</strong> If you do not upgrade within th=
+e next 24 hours, you will permanently lose access to Z-Library. Remember, <=
+strong>this is your LAST chance to secure uninterrupted access</strong> to =
+the world=E2=80=99s largest online library!</p>
+
+<p>As a Premium Member=
+, you=E2=80=99ll enjoy:</p>
+<ul>
+    <li>Fast, secure, and unlimited ac=
+cess to our vast collection of resources.</li>
+    <li>Exclusive features=
+ and early access to new releases.</li>
+    <li>A community of like-minde=
+d individuals passionate about knowledge.</li>
+</ul>
+
+<h2>=
+=F0=9F=94=A5 Final Countdown: Time is Running Out! =F0=9F=94=A5</h2>
+<p><=
+strong>Act Now!</strong> The opportunity to upgrade is vanishing fast. This=
+ email serves as your final reminder: <strong>Once the spots are gone, they=
+=E2=80=99re gone forever.</strong> Don=E2=80=99t let the clock run out on y=
+our chance to be a part of something extraordinary.</p>
+
+<p>With urgenc=
+y and best wishes,<br>The Z-Library Team</p>
+
+<p>If you prefer not to r=
+eceive further emails from Z-Library, you can <a href=3D"https://z-lib.id/u=
+nsubscribe/64529?expires=3D1726675775&amp;signature=3Da6cf52aa7e63201add44e=
+2abc5e396ee12b62befc85145c6f4d1c3f331e983c1">Unsubscribe here</a>.</p>
+</=
+body>
+</html>
