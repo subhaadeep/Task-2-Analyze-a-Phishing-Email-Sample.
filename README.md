@@ -41,6 +41,6 @@ Phishing Email Analysis Report
 	Examples (if any): No
 
 
-Report of the result is saved in report-b9c98672.txt file - []
+Report of the result is saved in report-b9c98672.txt file - [https://github.com/subhaadeep/Task-2-Analyze-a-Phishing-Email-Sample./blob/main/report-b9c98672.txt]
 
-Email filen (.eml) - []
+Email filen (.eml) - [https://github.com/subhaadeep/Task-2-Analyze-a-Phishing-Email-Sample./blob/main/Urgent_%20Secure%20Your%20Final%20Access%20to%20Z-Library%20Now.eml]
